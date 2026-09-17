@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace oop_c_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+
+    class Animals
+    {
+        private string Type;
+        private int Age;
+        private string Name;
+        private string Sound;
+
+        public Animals()
+        {
+            Type = "";
+            Age = 0;
+            Name = "";
+            Sound = "";
+        }
+
+        public Animals(string type, int age, string name, string sound) 
+        {
+            Type = type;
+            Age = age;
+            Name = name;
+            Sound = sound;
+        }
+
+        public string type 
+        {
+            get { return Type; }
+            set 
+            {
+                if (value == null || value == "")
+                {
+                    Console.WriteLine("You have to enter a type");
+                }
+                else Type = value;
+            }
+        }
+
+        public int age
+        {
+            get { return age; }
+            set 
+            {
+                if (value < 0 || value > 100)
+                {
+                    Console.WriteLine("You have to enter an age");
+                }
+                else age = value;
+            }
+        }
+
+        public string name 
+        {
+            get { return name; }
+            set 
+            {
+                if (value == null || value == "")
+                {
+                    Console.WriteLine("Enter your name");
+                }
+                else name = value;
+            }
+        }
+
+        public string sound 
+        {
+            get { return sound; }
+            set
+            {
+                if (value == null || value == "")
+                {
+                    Console.WriteLine("You have to enter an sound");
+                }
+                else sound = value;
+            }
+        }
+
+        public string getinfo()
+        {
+            return $"Вид: {type}\nВозраст {age}\n Кличка {name}";
+        }
+
+        public string sayHello()
+        {
+            return sound;
+        }
+    }
+}
